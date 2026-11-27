@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Thank You For Order Now! | Mirgi Mukti Capsule</title>
+
+  <!-- Google Fonts: Hind (Hindi) & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-green: #2E7D32;
+      --primary-green-dark: #1b5e20;
+      --primary-maroon: #7B1E1E;
+      --bg-offwhite: #F6F1E7;
+      --text-dark: #111827;
+      --text-body: #2d3748;
+      --app-max-width: 450px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Hind', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #1a0f0f;
+      color: var(--text-dark);
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .thankyou-shell {
+      width: 100%;
+      max-width: var(--app-max-width);
+      background-color: #ffffff;
+      min-height: 100vh;
+      padding: 16px 14px 40px;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top Green Banner */
+    .top-thankyou-banner {
+      background: var(--primary-green);
+      color: #ffffff;
+      text-align: center;
+      padding: 14px 16px;
+      border-radius: 6px;
+      margin-bottom: 14px;
+      box-shadow: 0 4px 12px rgba(46, 125, 50, 0.25);
+    }
+
+    .top-thankyou-banner h1 {
+      font-family: 'Georgia', serif;
+      font-size: 1.55rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      margin: 0;
+      line-height: 1.25;
+    }
+
+    /* Product Showcase Card */
+    .product-showcase-card {
+      border: 1.5px solid #d1d5db;
+      border-radius: 8px;
+      padding: 16px 12px 20px;
+      background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
+      text-align: center;
+      position: relative;
+      margin-bottom: 18px;
+    }
+
+    .card-product-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary-green);
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+      line-height: 1.2;
+    }
+
+    .card-product-sub {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #1f2937;
+      line-height: 1.4;
+      margin-bottom: 14px;
+    }
+
+    /* Delivery route & bottle layout */
+    .bottle-delivery-stage {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 250px;
+      margin: 10px 0 16px;
+    }
+
+    /* Delivery Van Graphic on Left */
+    .delivery-graphic {
+      position: absolute;
+      left: 6px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 110px;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .bottle-img-wrap {
+      position: relative;
+      z-index: 2;
+      width: 180px;
+      height: 250px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .bottle-img-wrap img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.18));
+    }
+
+    /* Order Now Red Pill Badge */
+    .order-now-pill {
+      display: inline-block;
+      background: linear-gradient(180deg, #ef4444 0%, #dc2626 100%);
+      color: #ffffff;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      padding: 6px 32px;
+      border-radius: 50px;
+      border: 2px solid #ffffff;
+      box-shadow: 0 4px 14px rgba(220, 38, 38, 0.45);
+      position: absolute;
+      bottom: -16px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+    }
+
+    /* Order Placed Headline */
+    .order-placed-headline {
+      font-family: 'Hind', sans-serif;
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: #111827;
+      text-align: center;
+      margin: 22px 0 10px;
+      line-height: 1.35;
+    }
+
+    .order-placed-desc {
+      font-size: 1.12rem;
+      font-weight: 500;
+      color: #1f2937;
+      line-height: 1.62;
+      text-align: center;
+      margin-bottom: 24px;
+      padding: 0 4px;
+    }
+
+    .order-placed-desc strong {
+      color: var(--primary-green);
+      font-weight: 800;
+    }
+
+    /* Next Steps Section Banner */
+    .next-steps-banner {
+      background: var(--primary-green);
+      color: #ffffff;
+      text-align: center;
+      padding: 12px 16px;
+      border-radius: 6px;
+      margin-bottom: 18px;
+      box-shadow: 0 3px 10px rgba(46, 125, 50, 0.2);
+    }
+
+    .next-steps-banner h2 {
+      font-size: 1.45rem;
+      font-weight: 800;
+      margin: 0;
+      letter-spacing: 0.2px;
+    }
+
+    /* Checklist of Next Steps */
+    .steps-checklist {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 26px;
+      padding: 0 4px;
+    }
+
+    .step-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      line-height: 1.62;
+      font-size: 1.1rem;
+      color: #1f2937;
+    }
+
+    .step-checkbox {
+      width: 24px;
+      height: 24px;
+      min-width: 24px;
+      background: #22c55e;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 0.95rem;
+      font-weight: 900;
+      margin-top: 3px;
+      box-shadow: 0 2px 6px rgba(34, 197, 94, 0.35);
+    }
+
+    .step-text {
+      flex: 1;
+    }
+
+    .step-title {
+      color: var(--primary-green);
+      font-weight: 800;
+      font-size: 1.14rem;
+    }
+
+    /* Closing Emotional Box */
+    .closing-emotional-box {
+      text-align: center;
+      margin-bottom: 20px;
+      padding: 0 6px;
+    }
+
+    .closing-text {
+      font-size: 1.15rem;
+      line-height: 1.65;
+      color: #1f2937;
+      font-weight: 500;
+      margin-bottom: 18px;
+    }
+
+    .closing-text strong {
+      color: var(--primary-green);
+      font-weight: 800;
+    }
+
+    .final-brand-slogan {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: #111827;
+      letter-spacing: 0.2px;
+      line-height: 1.3;
+      margin-bottom: 28px;
+    }
+
+    /* Return to Home Button */
+    .btn-return-home {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      background: linear-gradient(135deg, var(--primary-maroon) 0%, #5c1616 100%);
+      color: #ffffff;
+      text-decoration: none;
+      padding: 14px 20px;
+      border-radius: 50px;
+      font-size: 1.15rem;
+      font-weight: 800;
+      margin: 0 auto 28px;
+      box-shadow: 0 4px 14px rgba(123, 30, 30, 0.35);
+      transition: transform 0.2s ease;
+    }
+
+    .btn-return-home:active {
+      transform: scale(0.98);
+    }
+
+    /* Bottom Disclaimer */
+    .thankyou-footer {
+      border-top: 1px solid #e5e7eb;
+      padding-top: 18px;
+      margin-top: auto;
+      text-align: center;
+      opacity: 0.55;
+    }
+
+    .disclaimer-text {
+      font-size: 0.72rem;
+      color: #4b5563;
+      line-height: 1.5;
+      text-align: left;
+    }
+
+    .disclaimer-label {
+      color: #dc2626;
+      font-weight: 800;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="thankyou-shell">
+
+    <!-- 1. TOP GREEN BANNER -->
+    <div class="top-thankyou-banner">
+      <h1>Thank You For Order Now!</h1>
+    </div>
+
+    <!-- 2. PRODUCT SHOWCASE CARD -->
+    <div class="product-showcase-card">
+      <h2 class="card-product-title">MIRGI MUKTI CAPSULE</h2>
+      <p class="card-product-sub">Supports Brain &amp; Nerve Health, Reduces Seizures – Naturally, Safely.</p>
+
+      <div class="bottle-delivery-stage">
+        <!-- SVG Delivery Truck & Location Pin Route -->
+        <svg class="delivery-graphic" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Pin -->
+          <path d="M40 22C40 14.268 46.268 8 54 8C61.732 8 68 14.268 68 22C68 31 54 44 54 44C54 44 40 31 40 22Z" fill="#3B82F6"/>
+          <circle cx="54" cy="22" r="5" fill="#FFFFFF"/>
+          
+          <!-- Curved Route Line -->
+          <path d="M54 44C54 50 78 52 78 68C78 84 56 84 56 88L45 88" stroke="#10B981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          
+          <!-- Delivery Van / Truck -->
+          <!-- Van Body -->
+          <rect x="8" y="70" width="34" height="24" rx="3" fill="#F59E0B"/>
+          <!-- Stripes -->
+          <rect x="13" y="74" width="10" height="3" rx="1.5" transform="rotate(-30 13 74)" fill="#FFFFFF"/>
+          <rect x="13" y="81" width="10" height="3" rx="1.5" transform="rotate(-30 13 81)" fill="#FFFFFF"/>
+          
+          <!-- Cabin -->
+          <path d="M42 74H52L62 82V94H42V74Z" fill="#B45309"/>
+          <!-- Window -->
+          <path d="M44 76H51L58 82H44V76Z" fill="#93C5FD"/>
+          
+          <!-- Wheels -->
+          <circle cx="18" cy="95" r="5" fill="#1F2937"/>
+          <circle cx="18" cy="95" r="2" fill="#D1D5DB"/>
+          <circle cx="52" cy="95" r="5" fill="#1F2937"/>
+          <circle cx="52" cy="95" r="2" fill="#D1D5DB"/>
+        </svg>
+
+        <!-- Mirgi Mukti Capsule Bottle Image -->
+        <div class="bottle-img-wrap">
+          <img src="Images/mirgi-mukti-bottle.jpg" alt="Mirgi Mukti Capsule" loading="eager">
+        </div>
+
+        <!-- Order Now Red Pill Badge -->
+        <div class="order-now-pill">ORDER NOW</div>
+      </div>
+    </div>
+
+    <!-- 3. ORDER PLACED HEADING & TEXT -->
+    <h2 class="order-placed-headline">आपका ऑर्डर सफलतापूर्वक प्लेस हो गया है!</h2>
+    <p class="order-placed-desc">
+      <strong>Mirgi Mukti</strong> पर भरोसा जताने के लिए आपका दिल से धन्यवाद! अब आपकी मिर्गी के दौरों से मुक्ति की नई यात्रा शुरू हो चुकी है – और इसमें हर कदम पर हम आपके साथ हैं।
+    </p>
+
+    <!-- 4. NEXT STEPS SECTION -->
+    <div class="next-steps-banner">
+      <h2>अब आगे क्या होगा?</h2>
+    </div>
+
+    <div class="steps-checklist">
+      <!-- Item 1 -->
+      <div class="step-item">
+        <div class="step-checkbox">✓</div>
+        <div class="step-text">
+          <span class="step-title">ऑर्डर अपडेट्स</span> – आपको SMS और ईमेल के माध्यम से आपके ऑर्डर की पूरी जानकारी और ट्रैकिंग लिंक भेजा जाएगा। हर स्टेप की जानकारी आपको समय पर मिलती रहेगी।
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="step-item">
+        <div class="step-checkbox">✓</div>
+        <div class="step-text">
+          <span class="step-title">तेज़ डिलीवरी प्रोसेस</span> – आपका ऑर्डर 24 घंटों के भीतर डिस्पैच किया जाएगा और 3-7 कार्यदिवसों में सुरक्षित रूप से आपके घर पहुंचेगा।
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="step-item">
+        <div class="step-checkbox">✓</div>
+        <div class="step-text">
+          <span class="step-title">फ्री हेल्थ गाइड</span> – हम आपके साथ एक “Seizure Support Tips Guide” और आयुर्वेद विशेषज्ञों के कुछ खास निर्देश भेज रहे हैं – ताकि आपको जल्दी और असरदार फायदा मिल सके।
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="step-item">
+        <div class="step-checkbox">✓</div>
+        <div class="step-text">
+          <span class="step-title">अलर्ट्स और ऑफ़र</span> – भविष्य में हेल्थ टिप्स, प्रोडक्ट अपडेट्स और एक्सक्लूसिव ऑफर्स पाने के लिए कृपया हमारे SMS और ईमेल नोटिफिकेशन्स चेक करते रहें।
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. CLOSING EMOTIONAL MESSAGE & SLOGAN -->
+    <div class="closing-emotional-box">
+      <p class="closing-text">
+        अब दौरे नहीं, सिर्फ़ सुकून <strong>Mirgi Mukti</strong> के साथ आपका जीवन फिर से संतुलित और शांतिपूर्ण बनने की ओर बढ़ रहा है। हमें खुशी है कि आपने अपने जीवन में बदलाव लाने के लिए हमें चुना।
+      </p>
+
+      <div class="final-brand-slogan">
+        आपका भरोसा – हमारी ज़िम्मेदारी।
+      </div>
+
+      <!-- Return Button to Landing Page -->
+      <a href="index.html" class="btn-return-home">
+        <span>← होमपेज पर वापस जाएं</span>
+      </a>
+    </div>
+
+    <!-- 6. DISCLAIMER -->
+    <footer class="thankyou-footer">
+      <p class="disclaimer-text">
+        <strong class="disclaimer-label">Disclaimer</strong> – Mirgi Mukti Capsule is an Ayurvedic supplement. Results may vary from person to person. This product is not intended to diagnose, treat, cure, or prevent any disease. Please consult your doctor before use if you have any medical condition.
+      </p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
