@@ -353,7 +353,7 @@ const policyData = {
     title: '📄 Terms & Conditions',
     body: `
       <span class="policy-badge-pill">Please read carefully</span>
-      <p>Mirgi Mukti website और products का उपयोग करके आप निम्नलिखित terms से सहमत होते हैं:</p>
+      <p>Mirgi Mukti का उपयोग करके आप निम्नलिखित terms से सहमत होते हैं:</p>
       <ul class="policy-bullets">
         <li>Product results व्यक्ति-दर-व्यक्ति अलग हो सकते हैं।</li>
         <li>Product को medical treatment या medical advice का substitute नहीं माना जाना चाहिए।</li>
@@ -405,7 +405,7 @@ const policyData = {
     title: '⚠️ Legal Disclaimer',
     body: `
       <span class="policy-badge-pill">Important Notice</span>
-      <p>Mirgi Mukti एक wellness product है। Product के संबंध में निम्नलिखित बातें ध्यान में रखें:</p>
+      <p>Product के संबंध में निम्नलिखित बातें ध्यान में रखें:</p>
       <ul class="policy-bullets">
         <li>Product किसी बीमारी का diagnosis, treatment, cure या prevention करने का दावा नहीं करता।</li>
         <li>Results individual to individual अलग हो सकते हैं।</li>
@@ -423,7 +423,7 @@ const policyData = {
     title: '⚠️ Legal Disclaimer',
     body: `
       <span class="policy-badge-pill">Important Notice</span>
-      <p>Mirgi Mukti एक wellness product है। Product के संबंध में निम्नलिखित बातें ध्यान में रखें:</p>
+      <p>Product के संबंध में निम्नलिखित बातें ध्यान में रखें:</p>
       <ul class="policy-bullets">
         <li>Product किसी बीमारी का diagnosis, treatment, cure या prevention करने का दावा नहीं करता।</li>
         <li>Results individual to individual अलग हो सकते हैं।</li>

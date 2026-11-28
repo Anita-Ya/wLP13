@@ -572,232 +572,86 @@ body {
 }
 
 /* ==========================================================================
-   SECTION 3: CORKBOARD BULLETIN PROBLEMS SECTION
+   SECTION 3: PROBLEMS / SYMPTOMS (SIMPLE & CLEAN DESIGN)
    ========================================================================== */
-.corkboard-section {
-  background-color: var(--bg-cream);
-  padding: 16px 14px 24px;
+.problems-section {
+  background: var(--bg-offwhite);
+  padding: 24px 14px 28px;
 }
 
-.corkboard-frame {
-  background-color: #cb9b61;
-  background-image:
-    radial-gradient(circle at 15% 25%, rgba(115, 62, 19, 0.22) 1.2px, transparent 2px),
-    radial-gradient(circle at 75% 35%, rgba(92, 45, 10, 0.25) 1.5px, transparent 3px),
-    radial-gradient(circle at 35% 75%, rgba(140, 75, 30, 0.2) 1.2px, transparent 2px),
-    radial-gradient(circle at 85% 85%, rgba(85, 40, 8, 0.26) 1.5px, transparent 3px),
-    linear-gradient(135deg, #d8a56d 0%, #c48c52 50%, #b87f44 100%);
-  background-size: 26px 26px, 36px 36px, 30px 30px, 42px 42px, 100% 100%;
-  border: 7px solid #6b3d16;
-  border-radius: 16px;
-  box-shadow:
-    inset 0 0 20px rgba(0, 0, 0, 0.4),
-    0 10px 25px -4px rgba(107, 61, 22, 0.35);
-  padding: 24px 8px 20px;
-  position: relative;
-  overflow: visible;
-}
-
-.corkboard-surface {
-  position: relative;
+.problems-list {
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 12px;
+  margin-top: 6px;
 }
 
-.pin-item {
-  position: relative;
+.problem-clean-card {
+  background: #ffffff;
+  border: 1.5px solid var(--border-light);
+  border-left: 5px solid var(--primary-maroon);
+  border-radius: var(--radius-md);
+  padding: 12px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 100%;
+  gap: 14px;
+  box-shadow: 0 3px 10px rgba(123, 30, 30, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Note on Left, Polaroid on Right */
-.pin-layout-note-left .pinned-note-card {
-  flex: 1 1 auto;
-  z-index: 1;
-  transform: rotate(-1.5deg);
-  transition: transform 0.25s ease, z-index 0.2s ease;
-  padding: 16px 20px 16px 22px;
+.problem-clean-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(123, 30, 30, 0.1);
 }
 
-.pin-layout-note-left .pinned-polaroid {
-  flex: 0 0 172px;
-  width: 172px;
-  margin-left: -14px;
-  margin-top: -4px;
-  z-index: 2;
-  transform: rotate(3deg);
-  transition: transform 0.25s ease, z-index 0.2s ease;
-}
-
-/* Polaroid on Left, Note on Right */
-.pin-layout-polaroid-left .pinned-polaroid {
-  flex: 0 0 172px;
-  width: 172px;
-  z-index: 2;
-  transform: rotate(-3deg);
-  transition: transform 0.25s ease, z-index 0.2s ease;
-}
-
-.pin-layout-polaroid-left .pinned-note-card {
-  flex: 1 1 auto;
-  margin-left: -14px;
-  margin-top: 4px;
-  z-index: 1;
-  transform: rotate(1.5deg);
-  transition: transform 0.25s ease, z-index 0.2s ease;
-  padding: 16px 16px 16px 24px;
-}
-
-/* Hover or Active Lift */
-.pin-item:hover .pinned-note-card,
-.pin-item:hover .pinned-polaroid {
-  filter: brightness(1.02);
-}
-
-.pinned-polaroid:hover {
-  transform: scale(1.04) rotate(0deg) !important;
-  z-index: 10 !important;
-}
-
-.pinned-note-card:hover {
-  transform: scale(1.02) rotate(0deg) !important;
-  z-index: 10 !important;
-}
-
-/* Pinned Polaroid Card */
-.pinned-polaroid {
-  background: #ffffff;
-  padding: 7px 7px 22px 7px;
-  border-radius: 5px;
-  box-shadow:
-    0 3px 8px rgba(0, 0, 0, 0.16),
-    0 10px 24px rgba(0, 0, 0, 0.24);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  position: relative;
-  box-sizing: border-box;
-}
-
-.polaroid-img-box {
-  width: 100%;
-  aspect-ratio: 1 / 1;
+.problem-img-wrap {
+  width: 135px;
+  height: 135px;
+  min-width: 135px;
+  border-radius: 14px;
   overflow: hidden;
-  border-radius: 3px;
   background: #f1f5f9;
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.12);
+  border: 1px solid var(--border-light);
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-.polaroid-img-box img {
+.problem-img-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-/* Pinned Note / Memo Card with Notebook Ruling */
-.pinned-note-card {
-  background-color: #fffefb;
-  background-image:
-    linear-gradient(to right, transparent 16px, rgba(239, 68, 68, 0.22) 16px, rgba(239, 68, 68, 0.22) 17.5px, transparent 17.5px),
-    repeating-linear-gradient(to bottom, transparent, transparent 23px, #dbe4ee 24.5px);
-  border-radius: 7px;
-  box-shadow:
-    0 3px 7px rgba(0, 0, 0, 0.12),
-    0 9px 20px rgba(0, 0, 0, 0.18);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  min-height: 98px;
-  display: flex;
-  align-items: center;
-  position: relative;
-  box-sizing: border-box;
+.problem-text-box {
+  flex: 1;
 }
 
-.note-card-text {
+.problem-question {
   font-family: 'Hind', sans-serif;
-  font-size: 1.12rem;
+  font-size: 1.15rem;
   font-weight: 700;
-  color: #1e293b;
-  line-height: 1.55;
+  color: var(--text-dark);
+  line-height: 1.5;
   margin: 0;
-  word-break: normal;
-  overflow-wrap: break-word;
 }
 
-/* 3D Pushpins (Thumbtacks) */
-.thumbtack {
-  position: absolute;
-  top: -9px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 17px;
-  height: 17px;
-  border-radius: 50%;
-  z-index: 6;
-  filter: drop-shadow(1px 3px 2px rgba(0, 0, 0, 0.45));
-}
-
-.thumbtack::after {
-  content: '';
-  position: absolute;
-  top: 3px;
-  left: 3.5px;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.85);
-}
-
-.tack-red {
-  background: radial-gradient(circle at 35% 35%, #ff6b6b 0%, #ee5253 45%, #b33939 100%);
-}
-
-.tack-blue {
-  background: radial-gradient(circle at 35% 35%, #54a0ff 0%, #2e86de 45%, #0c2461 100%);
-}
-
-.tack-yellow {
-  background: radial-gradient(circle at 35% 35%, #feca57 0%, #ff9f43 50%, #d35400 100%);
-}
-
-.tack-green {
-  background: radial-gradient(circle at 35% 35%, #2ed573 0%, #10ac84 50%, #064e3b 100%);
-}
-
-/* Mobile Responsiveness for narrower screens */
 @media (max-width: 400px) {
-
-  .pin-layout-note-left .pinned-polaroid,
-  .pin-layout-polaroid-left .pinned-polaroid {
-    flex: 0 0 142px;
-    width: 142px;
+  .problem-clean-card {
+    padding: 10px;
+    gap: 12px;
   }
 
-  .pin-layout-note-left .pinned-note-card {
-    padding: 14px 16px 14px 18px;
+  .problem-img-wrap {
+    width: 118px;
+    height: 118px;
+    min-width: 118px;
+    border-radius: 12px;
   }
 
-  .pin-layout-polaroid-left .pinned-note-card {
-    padding: 14px 14px 14px 20px;
-  }
-
-  .note-card-text {
-    font-size: 0.94rem;
-    line-height: 1.42;
-  }
-}
-
-@media (max-width: 360px) {
-
-  .pin-layout-note-left .pinned-polaroid,
-  .pin-layout-polaroid-left .pinned-polaroid {
-    flex: 0 0 126px;
-    width: 126px;
-  }
-
-  .note-card-text {
-    font-size: 0.86rem;
+  .problem-question {
+    font-size: 1.05rem;
+    line-height: 1.45;
   }
 }
 
